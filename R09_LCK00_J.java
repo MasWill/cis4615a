@@ -3,10 +3,10 @@
 // https://wiki.sei.cmu.edu/confluence/display/java/LCK00-J.+Use+private+final+lock+objects+to+synchronize+classes+that+may+interact+with+untrusted+code
 
 public class SomeObject {
-  public final Object lock = new Object();
+  private final Object lock = new Object(); // private final lock object
  
   public void changeValue() {
-    synchronized (lock) {
+    synchronized (lock) { // Locks on the private Object
       // ...
     }
   }
